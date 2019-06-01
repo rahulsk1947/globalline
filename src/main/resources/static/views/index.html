@@ -1,11 +1,57 @@
-<!doctype html>
-<html ng-app>
+<html>
 <head>
-<title>My AngularJS App</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+table, th, td {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+</style>
 </head>
+
 <body>
-	<h1> Hello world,Rahul's first application. 7.57pm
+	<div ng-app="" ng-controller="studentController">
+
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Email</th>
+				<th>Last Name</th>
+			</tr>
+
+			<tr ng-repeat="student in students">
+				<td>{{ student.id }}</td>
+				<td>{{ student.email }}</td>
+				<td>{{ student.last_name }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<script>
+		function studentController($scope, $http) {
+			var url = "https://reqres.in/api/users";
+
+			$http.get(url).then(function(response) {
+				//angular.forEach(response.data.data, function(item, key){
+					//$scope.employees.push(item);
+				//	console.log('key:',item);
+				//});
+				//console.log($scope.employees);
+				console.log(response.data);
+				$scope.students = response.data.data;
+			});
+		}
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
 </body>
 </html>
