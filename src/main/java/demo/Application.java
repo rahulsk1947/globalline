@@ -8,9 +8,9 @@ import javax.annotation.PostConstruct;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class BootDemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootDemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

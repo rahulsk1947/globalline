@@ -1,25 +1,55 @@
 <html>
 
 <head>
+<style>
+.centerlocation {
+	width: 100%;
+	padding-right: 100px;
+	padding-left: 450px;
+	padding-top: 150px;
+	height: 100%;  
+}
 
+.centerlocation1 {
+	padding-left: 50px;
+	align: center;
+}
+
+table, th, td {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+</style>
 </head>
+<link rel="stylesheet/less" type="text/css" href="app.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="js/app.js"></script>
 
 <body>
 
     <div ng-app="myApp">
-        <div ng-controller="myController">
+        <div class="centerlocation" ng-controller="myController">
             <p>
                 <label>username : </label>
-                <input type="text" ng-model="username" name="username" id="username" />
+                <input type="text" ng-model="username" name="username" id="username" ng-init:searchText="Some Text" />
             </p>
             <p>
                 <label>password : </label>
                 <input type="password" name="password" id="password" ng-model="password" />
             </p>
-            <button type="button" ng-click="login()">Login In</button>
-            <button type="button" ng-click="newuser()">New User</button>
+            <div class="centerlocation1">
+            	<button type="button" style="padding: 5px 10px;" ng-click="login()">Login In</button>
+            	<button type="button" style="padding: 5px 10px;" ng-click="newuser()">New User</button>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,21 @@
+body{
+    background-color: #efefef;
+}
+span.spacing{
+    margin-right: 10px;
+}
+input.custom-width{
+    width: 200px;
+}
+input.spacing{
+    margin-right: 5px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 21px solid #ccc;
+  box-sizing: border-box;
+}
