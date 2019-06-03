@@ -1,6 +1,8 @@
 angular.module('myApp', []).controller('myController', ['$scope', '$http', '$location', '$window', function($scope, $http, $location, $window) {
     var username = "";
     var password = "";
+    $scope.username = 'eve.holt@reqres.in';
+    
     $scope.login = function() {
         username = $scope.username;
         password = $scope.password;
@@ -26,7 +28,8 @@ angular.module('myApp', []).controller('myController', ['$scope', '$http', '$loc
 }]);
 
 angular.module('myApp1', []).controller('userController', ['$scope', '$http', '$location', '$window', function($scope, $http, $location, $window) {
-
+	
+	$scope.username = 'eve.holt@reqres.in';
     $scope.register = function() {
         var username = $scope.username;
         var password = $scope.password;
@@ -38,7 +41,7 @@ angular.module('myApp1', []).controller('userController', ['$scope', '$http', '$
             console.log('status:', status);
             if (status == 200) {
                 alert('new user registered succefully!');
-                //$window.location.href = '/home'; 
+                $window.location.href = '/';
             }
         }).error(function(data, status, headers, config) {
             alert('Failed to Register.');

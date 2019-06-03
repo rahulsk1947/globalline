@@ -12,7 +12,6 @@ public class HomeController {
 	
 	@RequestMapping("/newuser")
 	public String newuser() {
-		System.out.println("Creating new user!");
 		return "newuser";
 	}
 	
